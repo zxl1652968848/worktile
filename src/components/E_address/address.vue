@@ -5,18 +5,21 @@
     			<span>通讯录</span>
     			<div class="address_left_user">
 	    			<a href="#">
-	    				<font-awesome-icon icon="user-plus" class="gray1" />
+	    				<font-awesome-icon icon="user-plus" />
 	    			</a>
     		    </div>
     		</div>
     		<div class="address_left_b">
     			<div class="address_left_b_inp">
-    				<i></i>
+    				<font-awesome-icon icon="search" class="gray1" />
     				<input type="text" placeholder="搜索"/>
     			</div>
     		</div>
     		<div class="address_left_button">
-    			
+    			<ul class="tabs-group">
+    				<li><font-awesome-icon icon="users" class="gre" /></li>
+    				<li></li>
+    			</ul>
     		</div>
     	</div>
     </div>
@@ -96,7 +99,30 @@
     		    	background: #fdfdfd;
     				border: 1px solid #ddd;
     		    }
+    		    .gray1{
+    		    	position: absolute;
+				    top: 10px;
+				    left: 30px;
+				    color:gray;
+    		    }
 		    }
+	    }
+	    .address_left_button{
+	    	.tabs-group{
+	    		flex-direction: row;
+			    padding: 0 20px;
+			    line-height: 18px;
+			    border-bottom: solid 1px #f3f3f3;
+			    height: 29px;
+			    li{
+			    	display: inline-block;
+			    	width: 50%;
+			    	text-align: center;
+			    	height: 29px;
+			    	float:left;
+			    }
+	    	}
+	    	
 	    }
 	}
 </style>
