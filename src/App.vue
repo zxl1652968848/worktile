@@ -50,7 +50,15 @@
                     }
                 ]
             }
-        }
+        },
+        
+            methods:{
+              routerGo(url){
+                // 路由跳转
+                this.$router.push({path:url});
+                // console.log(this.$route)
+              }
+            }
     }
 </script>
 
@@ -129,6 +137,7 @@
       	position: absolute;
 		    top: 0;
     		left: 70px;
+        width: 100%;
         height: 100%;
       }
 </style>
