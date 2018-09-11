@@ -3,7 +3,7 @@
         <div class="headm">
             <div class="ngicm">
                 <img src="https://s3.cn-north-1.amazonaws.com.cn/lcavatar/381df779-62e6-49de-8792-620b94a5582d_40x40.png" alt="">
-                <h1 class="acnti">企业公告</h1>
+                <h1 class="acnti">企业公告<i class="iconfont icon-xiangxia"></i></h1>
                 <div class="ngspn">用于全企业成员发布公告</div>
                 <i class="iconfont icon-shezhi"></i>
                 <i class="iconfont icon-yonghu"></i>
@@ -75,6 +75,9 @@ export default {
                     font-size: 16px;
                     line-height: 50px;
                     float: left;
+                    i{
+                        color: #333;
+                    }
                 }
                 .ngspn{
                     float: left;
