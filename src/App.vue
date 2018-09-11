@@ -6,12 +6,12 @@
       </div>
       <ul>
         <!-- 样式要在点击的标题与路由中的标题匹配时展示 -->
-        <li v-for="item of tabNav">
+        <li v-for="(item,index) of tabNav" :key="index">
           <!-- 跳转 -->
           <router-link :to='item.url'>{{item.title}}</router-link>
         </li>
       </ul>
-      <div class="ft"  v-for="item of tabNav1">
+      <div class="ft"  v-for="(item,index) of tabNav1" :key="index">
         <router-link :to='item.url'>{{item.title}}</router-link>
         <div class="m">M</div>
       </div>
@@ -28,7 +28,7 @@
                 tabNav:[
                     {
                         title:'消息',
-                        url:'./news'
+                        url:'./news/'
                     },
                     {
                         title:'项目',
@@ -126,9 +126,10 @@
         }
       }
       .nav{
-      	position: absolute;
-		    top: 0;
-    		left: 70px;
+        position: absolute;
+        top: 0;
+        left: 70px;
+        width: 100%;
         height: 100%;
       }
 </style>
