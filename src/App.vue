@@ -130,5 +130,6 @@
 		    top: 0;
     		left: 70px;
         height: 100%;
+        width: 100%;
       }
 </style>

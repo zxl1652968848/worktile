@@ -6,65 +6,48 @@
             </div>
             <div class="body-list">
                 <div class="search-area">
-                    <i class="lcfont lc-search"></i>
+                    <font-awesome-icon icon="search" class="search" />
                     <input type="text" class="form-control" placeholder="搜索文件、文件夹">
                 </div>
                 <!-- 文件夹 -->
                 <div class="section">
                     <ul class="lc-tree folder">
-                        <li class="disk" v-for="items of list">
+                        <li class="disk" v-for="items of lis" @click='show=!show'>
                             <router-link :to='items.url' class="company">
                                 <span>
-                                    <i></i>
+                                    <font-awesome-icon icon="caret-right" color='#ccc' />
                                 </span>
-                                <i class="wtf"></i>
+                                <font-awesome-icon icon="folder" color='#22d7bb' />
                                 <span class="qtitle">
                                     {{items.title}}
                                 </span>
+                            </router-link>  
+                        </li>
+                        <ul class="ncompany" v-show='show'>
+                            <li class="system" v-for='item of ncom'>
+                                <router-link :to='item.url'>
+                                    <font-awesome-icon icon="caret-right" style='color:#aaa;font-size:16px !important' />
+                                    <font-awesome-icon icon="folder" :style='{color:item.class}' />
+                                    <span class="qtitle">
+                                        {{item.title}}
+                                    </span>
+                                </router-link>
+                            </li>
+                        </ul>
+                        <li class="disk" v-for='item of list'>
+                            <router-link :to='item.url' class="company">
+                                <font-awesome-icon icon="caret-right" style='color:#ddd;font-size:16px !important' />
+                                <font-awesome-icon icon="folder" style='color:rgb(249, 105, 170);font-size:16px !important' />
+                                <span class="qtitle">
+                                    {{item.title}}
+                                </span>
                             </router-link>
-                            <!-- <ul class="ncompany">
-                                <li class="system">
-                                    <a href="javascript:;">
-                                        <span class="qtitle">
-                                            公司制度
-                                        </span>
-                                    </a>
-                                </li>
-                                 <li class="system">
-                                    <a href="javascript:;">
-                                        <span class="qtitle">
-                                           缺陷管理
-                                        </span>
-                                    </a>
-                                </li>
-                                 <li class="system">
-                                    <a href="javascript:;">
-                                        <span class="qtitle">
-                                            资料共享
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul> -->
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="main-body-center">
-            <div class="module-wrapper">
-                <div class="module-header">
-                    <div class="title">
-                        <a href="javascript:;">
-                            企业网盘
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="module-body">
-                    <router-view class="module-body-content"></router-view>
-                </div>
-            </div>
-        </div>
+        <router-view class="main-body-content"></router-view>
     </div>
 </template>
 
@@ -73,11 +56,14 @@
         name: "dbank",
         data(){
             return {
-                list:[
+                show:false,
+                lis:[
                     {
                         title:'企业网盘',
                         url:'/D_dbank/company'
-                    },
+                    }
+                ],
+                list:[
                     {
                         title:'个人网盘',
                         url:'/D_dbank/people'
@@ -92,12 +78,29 @@
                     },
                     {
                         title:'与我共享',
-                        url:''
+                        url:'/D_dbank/share'
                     },
                     {
                         title:'回收站',
-                        url:''
+                        url:'/D_dbank/trash'
                     }
+                ],
+                ncom:[
+                    {
+                        title:'公司制度',
+                        class:'rgb(148, 115, 253)',
+                        url:'/D_dbank/company/system'
+                    },
+                    {
+                        title:'资料共享',
+                        class:'rgb(34, 215, 187)',
+                        url:'/D_dbank/company/ziliao'
+                    },
+                    {
+                        title:'缺陷管理',
+                        class:'rgb(148, 115, 253)',
+                        url:'/D_dbank/company/manage'
+                    },
                 ]
             }
         }
@@ -130,18 +133,11 @@
         padding: 0 20px 10px;
         position: relative;
     }
-    .body-list .search-area i.lc-search{
+    .body-list .search-area .search{
         position: absolute;
-        top: 6px;
+        top: 10px;
         left: 30px;
         color: #8f8f8f;
-    }
-    .lc-search:before{
-        content: "\e619"
-    }
-    lcfont{
-        font-family: lcfont !important;
-        display: inline-block;
     }
     .body-list .search-area input{
         background: #f3f3f3;
@@ -190,46 +186,11 @@
         box-shadow: 0 0 8px 2px #eee;
         color: #333;
     }
-    .main-body-center{
-       position: absolute;
-       top: 0;
-       left: 240px;
-       width: 100%;
-       height: 100%;
-    }
-    .main-body-center .module-header{
-        height: 50px;
-        width: 100%;
-        padding: 0 15px;
-        position: relative;
-        background: rgba(253,253,253,.95);
-    }
-    .main-body-center .module-header .title{
-        font-size: 14px;
-        text-overflow:ellipsis;
-        overflow: hidden;
-        line-height: 50px;
-        color: #333;
-        float: left;
-    }
-    .module-body{
-        margin: 15px;
-        padding-right: 15px;
-    }
-    .module-body .module-body-content{
+    .main-body-content{
         width: 100%;
         height: 100%;
-    }
-    .main-body-center{
-        background-color: #ddd;
-    }
-    .main-body-center .module-wrapper{
-        width: 100%;
-        height: 100%;
-    }
-    .main-body-center .module-wrapper .module-body{
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
+        position: absolute;
+        left: 240px;
+        top: 0;
     }
 </style>

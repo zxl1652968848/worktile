@@ -6,11 +6,23 @@ import iView from 'iview'
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faUserPlus,
-  faComment
+  faComment,
+  faSearch,
+  faFolder,
+  faCaretRight,
+  faAngleDown,
+  faArrowDown,
+  faEllipsisH,
+  faUsers,
+  faTrashAlt,
+  faFileAlt,
+  faPlus,
+  faUpload,
+  faCaretDown
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faUserPlus,faComment);
+library.add(faUserPlus,faComment,faSearch,faFolder,faCaretRight,faAngleDown,faArrowDown,faEllipsisH,faUsers,faTrashAlt,faFileAlt,faPlus,faUpload,faCaretDown);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
@@ -48,8 +60,47 @@ const r = [
     {
         path:'/dbank',
         component:Dbank.default,
-        name:'网盘'
-    
+        name:'网盘',
+        children:[      
+            // 配置子路由
+            {
+                path:'/D_dbank/company',
+                component:require('./components/D_dbank/company/company.vue').default,
+                name:'企业网盘',
+                children:[
+                    {
+                        path:'/D_dbank/company/system',
+                        component:require('./components/D_dbank/company/system/system.vue').default,
+                        name:'公司制度'
+                    },
+                    {
+                        path:'/D_dbank/company/ziliao',
+                        component:require('./components/D_dbank/company/ziliao/ziliao.vue').default,
+                        name:'资料共享'
+                    },
+                    {
+                        path:'/D_dbank/company/manage',
+                        component:require('./components/D_dbank/company/manage/manage.vue').default,
+                        name:'缺陷管理'
+                    }
+                ]
+            },
+            {
+                path:'/D_dbank/people',
+                component:require('./components/D_dbank/people/people.vue').default,
+                name:'个人网盘'
+            },
+            {
+                path:'/D_dbank/share',
+                component:require('./components/D_dbank/share/share.vue').default,
+                name:'与我共享'
+            },
+            {
+                path:'/D_dbank/trash',
+                component:require('./components/D_dbank/trash/trash.vue').default,
+                name:'回收站'
+            },
+        ]
     },
     {
         path:'/address',
