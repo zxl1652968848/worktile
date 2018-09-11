@@ -6,11 +6,16 @@ import iView from 'iview'
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faUserPlus,
-  faComment
+  faComment,
+  faSearch,
+  faUsers,
+  faSitemap,
+  faCaretRight,
+  faUserFriends
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faUserPlus,faComment);
+library.add(faUserPlus,faComment,faSearch,faUsers,faSitemap,faCaretRight,faUserFriends);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
@@ -49,12 +54,64 @@ const r = [
         path:'/dbank',
         component:Dbank.default,
         name:'网盘'
-    
     },
     {
         path:'/address',
         component:Address.default,
-        name:'通讯录'
+        name:'通讯录',
+        children:[
+        		{
+        				path:'/address/add_1',
+                component:require('./components/E_address/add_1/add_1.vue').default,
+                name:'1'
+        		},
+        		{
+        				path:'/address/add_2',
+                component:require('./components/E_address/add_2/add_2.vue').default,
+                name:'2'
+        		},
+        		{
+        				path:'/address/add_3',
+                component:require('./components/E_address/add_3/add_3.vue').default,
+                name:'3'
+        		},
+        		{
+        				path:'/address/add_4',
+                component:require('./components/E_address/add_4/add_4.vue').default,
+                name:'4'
+        		},
+        		{
+        				path:'/address/add_5',
+                component:require('./components/E_address/add_5/add_5.vue').default,
+                name:'5'
+        		},
+        		{
+        				path:'/address/add_6',
+                component:require('./components/E_address/add_6/add_6.vue').default,
+                name:'6'
+        		},
+        		{
+        				path:'/address/rc',
+                component:require('./components/E_address/rc/rc.vue').default,
+                name:'rc'
+        		},
+        		{
+        				path:'/address/wp',
+                component:require('./components/E_address/wp/wp.vue').default,
+                name:'wp'
+        		},
+        		{
+        				path:'/address/xm',
+                component:require('./components/E_address/xm/xm.vue').default,
+                name:'xm'
+        		},
+        		{
+        				path:'/address/xt',
+                component:require('./components/E_address/xt/xt.vue').default,
+                name:'xt'
+        		},
+        ]
+        
     },
     {
       //如果用户随便输入地址,转到首页   给一个重定位
