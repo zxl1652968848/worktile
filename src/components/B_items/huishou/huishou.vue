@@ -23,5 +23,7 @@ export default {
         line-height: 50px;
         box-sizing: border-box;
     }
-    
+    .icon-delete{
+        color: #22d7bb;
+    }
 </style>
