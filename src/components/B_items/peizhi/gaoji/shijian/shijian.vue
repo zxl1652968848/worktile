@@ -87,6 +87,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped >
+*{
+    list-style: none;
+}
     .module{
         overflow: hidden;
         padding: 20px;

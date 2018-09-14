@@ -1,0 +1,91 @@
+{
+  "ryList": [
+    {
+      "title": "快放学了\n",
+      "id": "plslipf6",
+      "sj": "11:14"
+    },
+    {
+      "title": "哈哈哈\n",
+      "id": "6kxm7clt",
+      "sj": "11:14"
+    },
+    {
+      "title": "123",
+      "id": "3mbu0odj",
+      "sj": "22:1"
+    },
+    {
+      "title": "156",
+      "id": "gegvowfe",
+      "sj": "22:39"
+    },
+    {
+      "title": "123",
+      "id": "lxq42j95",
+      "sj": "8:36"
+    }
+  ],
+  "mythings": [
+    {
+      "title": "这是一个事务1",
+      "start": 20180907,
+      "end": 20180909,
+      "color": "#ad4",
+      "id": 1
+    },
+    {
+      "title": "这是一个事务2",
+      "start": 20180913,
+      "end": 20180917,
+      "color": "#ad4",
+      "id": 2
+    },
+    {
+      "start": 20180913,
+      "end": 20180913,
+      "color": "red",
+      "id": "2lwkjjgm",
+      "title": "事务"
+    },
+    {
+      "start": 20180913,
+      "end": 20180920,
+      "color": "red",
+      "id": "g53rog5h",
+      "title": "12313"
+    },
+    {
+      "start": 20180913,
+      "end": 20180928,
+      "color": "red",
+      "id": "th5y6d5l",
+      "title": "123123"
+    }
+  ],
+  "teamthings": [
+    {
+      "start": 20180911,
+      "end": 20180913,
+      "color": "red",
+      "id": "0krwms00",
+      "title": "这是一个事务"
+    }
+  ],
+  "peoplethings": [
+    {
+      "start": 20180911,
+      "end": 20180913,
+      "color": "red",
+      "id": "0krwms00",
+      "title": "测试"
+    }
+  ],
+  "actionthings": {
+    "start": 20180913,
+    "end": 20180928,
+    "color": "red",
+    "id": "th5y6d5l",
+    "title": "123123"
+  }
+}

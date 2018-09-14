@@ -27,7 +27,7 @@
                             <i v-for="(tre,index)  of item.pingtai" :class="tre"></i>
                         </td>
                         <td>
-                            <span>删除</span>
+                            <span><i class="iconfont icon-huishourecycling11"></i></span>
                         </td>
                     </tr>
                 </tbody>

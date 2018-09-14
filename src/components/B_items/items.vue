@@ -1,4 +1,3 @@
-
 <template>
     <div class="body">
         <div class="left">
@@ -10,8 +9,18 @@
                     <input type="text" placeholder="搜索任务">
                 </div>
                 <ul>
-                    <li  v-for="item of tabNav" :class="{cur : item.title==$route.name}" @click="routerGo(item.url)">{{item.title}}</li>
+                    <li  v-for="item of tabNav" :class="{cur : item.title==$route.name}" @click="routerGo(item.url)"><i :class="item.icon" class="iconfont"></i>&nbsp;{{item.title}}</li>
                 </ul>
+               <!--  <div class="box" :style="{height:robotH}">
+       						<ul>
+       							<li v-for="(item,index) of work" class="work" @click="ac(index)" :class="{active:$route.name.indexOf(item.title) != -1}">
+	   								<router-link :to='item.url'>
+	   									<i class="iconfont" :class='item.icon'></i>
+	   									{{item.title}}
+	   								</router-link>
+	   							</li>
+       						</ul>	
+       					</div> -->
             </div>
         </div>
         <div class="right">
@@ -26,13 +35,28 @@ export default {
         return {
             tabNav:[
                 {
+                url:'/B_items/gongzuo',
+                title:"工作",
+                icon:"icon-jiantou"
+                },{
+                url:'/B_items/gongzuo/wode',
+                title:"我的",
+                icon:"icon-renxiang"
+                },{
+                url:'/B_items/gongzuo/subordinate',
+                title:"个人",
+                icon:"icon-renxiang"
+                },{
                 url:'/B_items/peizhi',
-                title:"配置中心"
+                title:"配置中心",
+                icon:"icon-shezhi1"
                 },{
                 url:'/B_items/huishou',
-                title:"回收站"
+                title:"回收站",
+                icon:"icon-huishourecycling11"
                 }
-            ]
+            ],
+            
         }
     },
     methods:{
@@ -41,6 +65,7 @@ export default {
         this.$router.push({path:url});
         // console.log(this.$route)
         }
+       
     }
 }
 </script>

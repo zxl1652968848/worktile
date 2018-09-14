@@ -47,6 +47,7 @@ export default {
            font-size: 14px;
            color: #888;
            cursor: pointer;
+           list-style: none;
        }
    }
    .cur{

@@ -9,7 +9,9 @@
             <table>
                 <thead>
                     <tr>
-                        <th style="width:20%">安全模式</th>
+                        <th style="width:20%">
+                            
+                            安全模式</th>
                         <th>备注</th>
                         <th>角色模式</th>
                         <th>默认</th>
@@ -64,6 +66,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped >
+*{
+    list-style: none;
+}
     .module{
         overflow: hidden;
         padding: 20px;

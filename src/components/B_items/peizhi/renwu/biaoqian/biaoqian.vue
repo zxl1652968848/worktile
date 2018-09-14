@@ -27,7 +27,10 @@
                             {{item.shu}}
                         </td>
                         <td >
-                            {{item.caozuo}}
+                           <span style="color:#22d7bb"><i class="iconfont icon-shezhi1" ></i>管理</span>
+                            <!-- <span><i class="iconfont icon-xiugai"></i></span> -->
+                            <span><i class="iconfont icon-buoumaotubiao25"></i></span>
+                            <span><i class="iconfont icon-huishourecycling11"></i></span>
                         </td>
                         
                     </tr>

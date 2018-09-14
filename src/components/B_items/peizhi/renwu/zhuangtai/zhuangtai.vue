@@ -33,7 +33,8 @@
                             {{item.zhuangtai}}
                         </td>
                         <td>
-
+                            <span><i class="iconfont icon-buoumaotubiao25"></i></span>
+                            <span><i class="iconfont icon-huishourecycling11"></i></span>
                         </td>
                     </tr>
                 </tbody>

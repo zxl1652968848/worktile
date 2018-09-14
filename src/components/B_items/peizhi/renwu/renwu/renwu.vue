@@ -28,9 +28,10 @@
                             {{item.leixing}}
                         </td>
                         <td>
-                            <span>配置</span>
-                            <span>修改</span>
-                            <span>删除</span>
+                            <span style="color:#22d7bb"><i class="iconfont icon-shezhi1" ></i>配置</span>
+                            <span><i class="iconfont icon-xiugai"></i></span>
+                           <!--  <span><i class="iconfont icon-buoumaotubiao25"></i></span> -->
+                            <span><i class="iconfont icon-huishourecycling11"></i></span>
                         </td>
                     </tr>
                 </tbody>
